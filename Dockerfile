@@ -15,5 +15,6 @@ RUN cd nginx-1.17.4 && \
   ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module && make && make install
 RUN rm /usr/local/nginx/conf/nginx.conf
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
-EXPOSE 80
+EXPOSE 1935
+EXPOSE 8080
 CMD /usr/local/nginx/sbin/nginx -g 'daemon off;'
